@@ -1,0 +1,72 @@
+
+#root {
+	/* the 'root' has 90% of the browser width */ 
+    width: 90vw;
+    height: auto;
+
+	/* center the 'root' horizontally within the 'body' */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.wrapper {
+	/* center a row of images horizontally within the 'wrapper' */
+	text-align: center;
+}
+
+/* reset some Bootstrap CSS used for the poster */
+.poster {
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top:2px;
+    float: none;
+}
+
+/* the sequence of @media is important */
+/* we can continue to play with poster width and height later */
+
+/* device width from 768px to 1366px */
+@media (max-device-width: 1366px) {
+    .poster {
+    	/* poster has 32% of the browser height */ 
+        height: 32vh;
+        width: auto;
+    }
+}
+
+/* device width from 768px to 812px */
+@media (max-device-width: 812px) {
+    .poster {
+    	/* 3 posters in the row */
+        width: 16.16%;
+        height: auto;
+    }
+}
+
+/* device width from 576px to 768px */
+@media (max-device-width: 768px) {
+    .poster {
+    	/* 3 posters in the row */
+        width: 33.33%;
+        height: auto;
+    }
+}
+
+/* device width from 440px to 576px */
+@media (max-device-width: 576px) {
+    .poster {
+    	/* 2 posters in the row */
+        width: 50%;
+        height: auto;
+    }
+}
+
+/* device width from 1px to 576px */
+@media (max-device-width: 440px) {
+    .poster {
+    	/* 1 poster in the row */
+        width: 100%;
+        height: auto;
+    }
+}
+
