@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import axios from 'axios';
 import Movie from "./Movie";
 import Info from "./Info";
@@ -8,14 +8,14 @@ import Info from "./Info";
 class MovieList extends React.Component {
     constructor(props) {
         super(props);
-        // this is where we store movies when they have been retrieved
+        // this is where we store the result of API query
         this.state = { movies: [] };
     }
 
-    // runs when component is mounted
+    // runs once after component is mounted
     componentDidMount() {
         // url query for all popular movies
-        var url =
+        let url =
             'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a3abe9699d800e588cb2a57107b4179c';
         // get all popular movies from TMDb
         axios
@@ -30,24 +30,23 @@ class MovieList extends React.Component {
     }
 
     render() {
-        const MovieList = this.state.movies.slice(0, 12).map(movie =>
+        // use the first 12 movies to get the array of Movie components
+        const movieList = this.state.movies.slice(0, 12).map(movie =>
             (<Movie key={movie.id} id={movie.id} poster_id={movie.poster_path}/>));
 
-        return (<div className = "panel-body wrapper"> { MovieList } </div>)
+        return (<div className = "panel-body home-wrapper"> { movieList } </div>);
     }
 } // end of MovieList component
 
 
 class App extends React.Component {
-
-    // render={...} is used instead of component={...} to test the sending of props from the route
-    // without creating new component each time
     render() {
         return (
+            // React Routes; Movie posters are used as Links
             <BrowserRouter>
-                <div>
+                <div className="main-wrapper">
                     <Route exact path="/" component={MovieList}/>
-                    <Route path="/info" render={ (props) => <Info {...props} test="Props from the Route"/> }/>
+                    <Route path="/info" component={Info}/>
                 </div>
             </BrowserRouter>
         );

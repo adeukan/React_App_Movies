@@ -1,72 +1,233 @@
+body {
+    /* use the full height of the browser window,
+    it allows to center the child element verticaly on the window */
+    height: 100vh;
+    width: auto;
+}
 
 #root {
-	/* the 'root' has 90% of the browser width */ 
+	/* the 'root' has 90% of the browser width */
     width: 90vw;
     height: auto;
-
 	/* center the 'root' horizontally within the 'body' */
+    margin-right: auto;
+    margin-left: auto;
+
+    /* use absolute position ... */
+    position: absolute;
+    /* ... and move the root so that the left upper corner of the root fits the center of the window */
+    top: 50%;
+    left: 50%;
+    /* move the root back so that the center of the root fits the center of the window */
+    transform: translate(-50%, -50%);
+}
+.home-wrapper {
+	/* center a row of images horizontally within the 'home-wrapper' */
+	text-align: center;
+}
+
+.info-wrapper {
+    width: 500px;
+    height: auto;
+    /* center the text and image horizontally within the 'info-wrapper' */
+    text-align: center;
+    /* center the 'info-wrapper' horizontally within the 'root' */
     margin-right: auto;
     margin-left: auto;
 }
 
-.wrapper {
-	/* center a row of images horizontally within the 'wrapper' */
-	text-align: center;
+/* browser width up to 550px */
+@media (max-width: 550px) {
+    .info-wrapper {
+        width: 300px;
+        height: auto;
+    }
 }
 
 /* reset some Bootstrap CSS used for the poster */
-.poster {
+.home-poster{
     padding-left: 1px;
     padding-right: 1px;
     padding-top:2px;
     float: none;
 }
 
-/* the sequence of @media is important */
-/* we can continue to play with poster width and height later */
+.info-title {
+    font-size:1.6em;
+}
 
-/* device width from 768px to 1366px */
-@media (max-device-width: 1366px) {
-    .poster {
-    	/* poster has 32% of the browser height */ 
-        height: 32vh;
-        width: auto;
+.info-overview {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    /* stretch the overview text  */
+    text-align: justify;
+    text-justify: inter-word; 
+}
+
+li {
+    /* reassign Bootstrap CSS */
+    padding: 5px 0 5px 0 !important;
+}
+
+/* landscape mode and width between 1025px and 1366px */
+@media (max-device-width: 1366px) and (min-aspect-ratio: 1/1) {
+    
+    .info-wrapper {
+         /* use almost full width of the device */
+        width: 95%;
+        height: auto;
+    }
+    .home-poster{
+        /* 3 posters in the row */
+        width: 33%;
+        height: auto;
+    }
+    .info-poster {
+        width: 20%;
+    }
+    .info-title {
+        font-size:4em;
+    }
+    li {
+        font-size:2em;
+        /* reassign Bootstrap CSS */
+        padding: 2px 0 2px 0 !important;
     }
 }
 
-/* device width from 768px to 812px */
-@media (max-device-width: 812px) {
-    .poster {
-    	/* 3 posters in the row */
+/* landscape mode and width between 826px and 1024px */
+@media (max-device-width: 1024px) and (min-aspect-ratio: 1/1) {
+    
+    .info-wrapper {
+        width: 90%;
+        height: auto;
+    }
+    .home-poster{
+        width: 33%;
+        height: auto;
+    }
+    .info-poster {
+        width: 20%;
+    }
+    .info-title {
+        font-size:2.2em;
+    }
+    li {
+        font-size:1.3em;
+        padding: 2px 0 2px 0 !important;
+    }
+}
+
+/* landscape mode and width up to 825px */
+@media (max-device-width: 825px) and (min-aspect-ratio: 1/1) {
+
+    .info-wrapper {
+        width: auto;
+        height: 100vh;
+    }
+    .home-poster{
         width: 16.16%;
         height: auto;
     }
+    .info-poster {
+        width: 12%;
+    }
+    .info-title {
+        font-size:1.8em;
+    }
+    li {
+        font-size:1.4em;
+        padding: 2px 0 2px 0 !important;
+    }
 }
 
-/* device width from 576px to 768px */
-@media (max-device-width: 768px) {
-    .poster {
-    	/* 3 posters in the row */
+/* portrait mode and width between 1025px and 1366px */
+@media (max-device-width: 1366px) and (max-aspect-ratio: 1/1) {
+    .info-wrapper {
+        width: 80vw;
+        height: auto;
+    }
+    .home-poster{
         width: 33.33%;
         height: auto;
     }
-}
-
-/* device width from 440px to 576px */
-@media (max-device-width: 576px) {
-    .poster {
-    	/* 2 posters in the row */
-        width: 50%;
-        height: auto;
+    .info-poster {
+        width: 30vw;
+    }
+    .info-title {
+        font-size:3em;
+    }
+    li {
+        font-size:2em;
+        padding: 2px 0 2px 0 !important;
     }
 }
 
-/* device width from 1px to 576px */
-@media (max-device-width: 440px) {
-    .poster {
+/* portrait mode and width between 769px and 1024px */
+@media (max-device-width: 1024px) and (max-aspect-ratio: 1/1) {
+    
+    .info-wrapper {
+        width: 70vw;
+        height: auto;
+    }
+    .home-poster{
+        width: 33.33%;
+        height: auto;
+    }
+    .info-poster {
+        width: 30%;
+    }
+    .info-title {
+        font-size:3em;
+    }
+    li {
+        font-size:2em;
+        padding: 2px 0 2px 0 !important;
+    }
+}
+
+/* portrait mode and width between 441 and 768px */
+@media (max-device-width: 768px) and (max-aspect-ratio: 1/1) {
+    .info-wrapper {
+        width: auto;
+        height: 100vh;
+    }
+    .home-poster{
+        width: 33.33%;
+        height: auto;
+    }
+    .info-poster {
+        width: 30%;
+    }
+    .info-title {
+        font-size:3em;
+    }
+    li {
+        font-size:2em;
+        padding: 2px 0 2px 0 !important;
+    }
+}
+
+/* portrait mode and width up to 440px */
+@media (max-device-width: 440px) and (max-aspect-ratio: 1/1) {
+
+    .info-wrapper {
+        width: auto;
+        height: 100vh;
+    }
+    .home-poster{
     	/* 1 poster in the row */
         width: 100%;
         height: auto;
     }
+    .info-poster {
+        width: 50%;
+    }
+    .info-title {
+        font-size:4em;
+    }
+    li {
+        font-size:3em;
+        padding: 2px 0 2px 0 !important;
+    }
 }
-
