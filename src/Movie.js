@@ -1,21 +1,14 @@
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 class Movie extends React.Component {
     constructor(props) {
         super(props);
         // setup the state
         this.state = {
-            key: '',
             poster_path: 'http://image.tmdb.org/t/p/w185'
         };
-
-        // bind callback methods with `this`
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    // click poster handler
-    handleClick() {
-        this.setState((prevState) => ({})); //// !!!!!!!!!!!!!!!!!!!
     }
 
     // runs when component is mounted
@@ -28,9 +21,14 @@ class Movie extends React.Component {
         );
     }
 
+    // to={{...}} is used for sending props through the link
     render() {
         return (
-            <img onClick={this.handleClick} src={this.state.poster_path} alt="Poster" className="poster col-sm-4 col-md-3 col-lg-2" />
+            <Link to={{ pathname: '/info',
+                         state: { id: this.props.id }
+                     }}>
+                <img src={this.state.poster_path} className="poster col-sm-4 col-md-3 col-lg-2" alt="Poster"/>
+            </Link>
         );
     }
 }
