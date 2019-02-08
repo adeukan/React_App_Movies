@@ -12,7 +12,6 @@ body {
 	/* center the 'root' horizontally within the 'body' */
     margin-right: auto;
     margin-left: auto;
-
     /* use absolute position ... */
     position: absolute;
     /* ... and move the root so that the left upper corner of the root fits the center of the window */
@@ -21,12 +20,14 @@ body {
     /* move the root back so that the center of the root fits the center of the window */
     transform: translate(-50%, -50%);
 }
+
 .home-wrapper {
 	/* center a row of images horizontally within the 'home-wrapper' */
 	text-align: center;
 }
 
 .info-wrapper {
+
     width: 500px;
     height: auto;
     /* center the text and image horizontally within the 'info-wrapper' */
@@ -34,6 +35,11 @@ body {
     /* center the 'info-wrapper' horizontally within the 'root' */
     margin-right: auto;
     margin-left: auto;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0 !important;
 }
 
 /* browser width up to 550px */
@@ -53,7 +59,7 @@ body {
 }
 
 .info-title {
-    font-size:1.6em;
+    font-size: 4vh;
 }
 
 .info-overview {
@@ -61,7 +67,7 @@ body {
     padding-right: 10px !important;
     /* stretch the overview text  */
     text-align: justify;
-    text-justify: inter-word; 
+    text-justify: inter-word;
 }
 
 li {
@@ -71,7 +77,9 @@ li {
 
 /* landscape mode and width between 1025px and 1366px */
 @media (max-device-width: 1366px) and (min-aspect-ratio: 1/1) {
-    
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
          /* use almost full width of the device */
         width: 95%;
@@ -86,10 +94,10 @@ li {
         width: 20%;
     }
     .info-title {
-        font-size:4em;
+        font-size: 4em;
     }
     li {
-        font-size:2em;
+        font-size: 2em;
         /* reassign Bootstrap CSS */
         padding: 2px 0 2px 0 !important;
     }
@@ -97,7 +105,9 @@ li {
 
 /* landscape mode and width between 826px and 1024px */
 @media (max-device-width: 1024px) and (min-aspect-ratio: 1/1) {
-    
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
         width: 90%;
         height: auto;
@@ -110,17 +120,19 @@ li {
         width: 20%;
     }
     .info-title {
-        font-size:2.2em;
+        font-size: 2.2em;
     }
     li {
-        font-size:1.3em;
+        font-size: 1.3em;
         padding: 2px 0 2px 0 !important;
     }
 }
 
 /* landscape mode and width up to 825px */
 @media (max-device-width: 825px) and (min-aspect-ratio: 1/1) {
-
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
         width: auto;
         height: 100vh;
@@ -133,16 +145,19 @@ li {
         width: 12%;
     }
     .info-title {
-        font-size:1.8em;
+        font-size: 1.8em;
     }
     li {
-        font-size:1.4em;
+        font-size: 1.4em;
         padding: 2px 0 2px 0 !important;
     }
 }
 
 /* portrait mode and width between 1025px and 1366px */
 @media (max-device-width: 1366px) and (max-aspect-ratio: 1/1) {
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
         width: 80vw;
         height: auto;
@@ -155,17 +170,19 @@ li {
         width: 30vw;
     }
     .info-title {
-        font-size:3em;
+        font-size: 3em;
     }
     li {
-        font-size:2em;
+        font-size: 2em;
         padding: 2px 0 2px 0 !important;
     }
 }
 
 /* portrait mode and width between 769px and 1024px */
 @media (max-device-width: 1024px) and (max-aspect-ratio: 1/1) {
-    
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
         width: 70vw;
         height: auto;
@@ -178,16 +195,19 @@ li {
         width: 30%;
     }
     .info-title {
-        font-size:3em;
+        font-size: 3em;
     }
     li {
-        font-size:2em;
+        font-size: 2em;
         padding: 2px 0 2px 0 !important;
     }
 }
 
 /* portrait mode and width between 441 and 768px */
 @media (max-device-width: 768px) and (max-aspect-ratio: 1/1) {
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
         width: auto;
         height: 100vh;
@@ -200,17 +220,19 @@ li {
         width: 30%;
     }
     .info-title {
-        font-size:3em;
+        font-size: 3em;
     }
     li {
-        font-size:2em;
+        font-size: 2em;
         padding: 2px 0 2px 0 !important;
     }
 }
 
 /* portrait mode and width up to 440px */
 @media (max-device-width: 440px) and (max-aspect-ratio: 1/1) {
-
+    #root {
+        width: 100vw;
+    }
     .info-wrapper {
         width: auto;
         height: 100vh;
@@ -224,10 +246,10 @@ li {
         width: 50%;
     }
     .info-title {
-        font-size:4em;
+        font-size: 4em;
     }
     li {
-        font-size:3em;
+        font-size: 3em;
         padding: 2px 0 2px 0 !important;
     }
 }

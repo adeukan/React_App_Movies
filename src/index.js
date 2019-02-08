@@ -5,6 +5,7 @@ import axios from 'axios';
 import Movie from "./Movie";
 import Info from "./Info";
 
+
 class MovieList extends React.Component {
     constructor(props) {
         super(props);
